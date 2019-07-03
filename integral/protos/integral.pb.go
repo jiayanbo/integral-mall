@@ -243,7 +243,7 @@ func (m *FindOneByUserIdRequest) GetUserId() int64 {
 }
 
 func init() {
-	proto.RegisterType((*FindUserByMobileRequest)(nil), "protos.FindUserByMobileRequest")
+	//proto.RegisterType((*FindUserByMobileRequest)(nil), "protos.FindUserByMobileRequest")
 	proto.RegisterType((*IntegralResponse)(nil), "protos.IntegralResponse")
 	proto.RegisterType((*AddIntegralRequest)(nil), "protos.AddIntegralRequest")
 	proto.RegisterType((*ConsumerIntegralRequest)(nil), "protos.ConsumerIntegralRequest")

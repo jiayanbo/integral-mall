@@ -39,17 +39,20 @@ func main() {
 
 	engine, err := xorm.NewEngine("mysql", conf.Mysql.DataSource)
 	if err != nil {
+		log.Println("1")
 		log.Fatal(err)
 	}
 	client := redis.NewClient(&redis.Options{Addr: conf.Redis.DataSource, Password: conf.Redis.Auth})
+	log.Println("conf.IntegralRpc: ", conf.IntegralRpc)
 	rpcxClient, err := grpcx.MustNewGrpcxClient(conf.IntegralRpc)
 	if err != nil {
+		log.Println("2")
 		log.Fatal(err)
 	}
 	integralRpcModel := integralrpcmodel.NewIntegralRpcModel(
 		rpcxClient,
 	)
-
+	
 	userModel := model.NewUserModel(engine, client, conf.Mysql.Table.User)
 	userLogic := logic.NewUserLogic(userModel, client, integralRpcModel)
 	userController := controller.NewUserController(userLogic)

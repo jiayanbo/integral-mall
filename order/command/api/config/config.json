@@ -2,7 +2,7 @@
   "Mode": "release",
   "Port": ":9994",
   "Mysql": {
-    "DataSource": "root:Vector.123@tcp(192.168.5.100:3306)/order?charset=utf8",
+    "DataSource": "root:123@tcp(192.168.8.68:3306)/order?charset=utf8",
     "Table": {
       "Order": "order"
     }
@@ -14,8 +14,8 @@
   "UserRpc": {
     "Target": "vector:///user-rpc",
     "Endpoints": [
-      "192.168.5.100:2379",
-      "192.168.5.101:2379"
+      "192.168.8.68:2379",
+      "192.168.5.247:2379"
     ]
   }
 }
