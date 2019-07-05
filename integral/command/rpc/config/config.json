@@ -1,7 +1,7 @@
 {
   "Mode": "release",
   "Mysql": {
-    "DataSource": "root123@tcp(192.168.8.68:3306)/integral?charset=utf8",
+    "DataSource": "root:123@tcp(192.168.8.68:3306)/integral?charset=utf8",
     "Table": {
       "Integral": "integral"
     }
