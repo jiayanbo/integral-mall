@@ -20,7 +20,7 @@
     ]
   },
   "RabbitMq": {
-    "DataSource": "amqp://root:123456@192.168.8.68:5672/",
+    "DataSource": "amqp://root:root@192.168.8.68:5672/",
     "VirtualHost": "",
     "QueueName": "integral"
   }
