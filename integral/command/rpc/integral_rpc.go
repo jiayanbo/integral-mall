@@ -35,6 +35,7 @@ func main() {
 	log4g.Init(log4g.Config{Path: "logs"})
 	engine, err := xorm.NewEngine("mysql", conf.Mysql.DataSource)
 	if err != nil {
+		log.Println("xorm err")
 		log.Fatal(err)
 	}
 	client := redis.NewClient(&redis.Options{Addr: conf.Redis.DataSource, Password: conf.Redis.Auth})
@@ -44,6 +45,7 @@ func main() {
 		conf.RabbitMq.QueueName,
 	)
 	if err != nil {
+		log.Println("rabbitMqServer err")
 		log.Fatal(err)
 	}
 	userServerLogic := logic.NewIntegralLogic(
@@ -54,6 +56,7 @@ func main() {
 		protos.RegisterIntegralRpcServer(server, userServerLogic)
 	})
 	if err != nil {
+		log.Println("rpcServer err")
 		log.Fatal(err)
 	}
 	userServerLogic.ConsumeMessage()
