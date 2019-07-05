@@ -1,13 +1,13 @@
 {
   "Mode": "release",
   "Mysql": {
-    "DataSource": "root:Vector.123@tcp(192.168.5.100:3306)/integral?charset=utf8",
+    "DataSource": "root123@tcp(192.168.8.68:3306)/integral?charset=utf8",
     "Table": {
       "Integral": "integral"
     }
   },
   "Redis": {
-    "DataSource": "192.168.5.100:6379",
+    "DataSource": "192.168.8.68:6379",
     "Auth": ""
   },
   "RpcServerConfig": {
@@ -15,12 +15,12 @@
     "ServerName": "integral-rpc",
     "ServerAddress": ":9092",
     "Endpoints": [
-      "192.168.5.100:2379",
-      "192.168.5.101:2379"
+      "192.168.8.68:2379",
+      "192.168.8.247:2379"
     ]
   },
   "RabbitMq": {
-    "DataSource": "amqp://root:123456@192.168.5.100:5672/",
+    "DataSource": "amqp://guest:guest@192.168.8.68:5672/",
     "VirtualHost": "",
     "QueueName": "integral"
   }
